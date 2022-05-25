@@ -131,7 +131,8 @@ body {
 
   width: 50px;
   height: 50px;
-  padding: p-30;
+  padding: -30px;
+    
 }
 
 .container {
@@ -139,3 +140,94 @@ body {
   justify-content: center
 }
 
+/* ! estilização do cadastro */
+.contato {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  min-height: 78vh; /* tamanho minimo da tela, mas pode crescer caso coloque mais conteudo... fiz isso pra poder jogar o footer mais pra baixo, pq o conteudo do contato é bem pequeno */
+  width: 75%;
+  margin: 0 auto;
+}
+
+.contato form {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+}
+
+.contato label,
+.contato p {
+  color: var(--accent-color);
+  margin-bottom: 0.275rem;
+}
+
+.contato input, .contato textarea {
+  width: 100%;
+  resize: none; /* impedindo que o usuário possa alterar o tamanho da caixa de texto, pra não causar com o meu layout */
+  border: 0;
+  padding: 0.275rem;
+  font-size: 1.075rem;
+  margin-bottom: 1rem;
+  color: var(--accent-color);
+  background-color: transparent;
+  border-bottom: 2px solid;
+}
+
+.contato button {
+  padding: 0.5rem 1rem;
+  width: 100%;
+  border: 2px solid var(--main-color);
+  border-radius: 0.25rem;
+  background-color: transparent;
+  color: var(--main-color);
+  font-size: 1.275rem;
+  font-weight: 600;
+  width: max(50%, 150px);
+  margin: 0 auto;
+  cursor: pointer; /* mudando o formatod o cursor do mouse quando colocar em cima do botão, praquele de mãozinha */
+  transition: 0.3s ease-out;
+}
+
+.contato button:hover {
+  color: var(--background-color);
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+}
+
+.contato h2 {
+  font-size: 1.5rem;
+}
+
+.mapa {
+  width: max(40vw, 500px);
+  height: auto;
+  aspect-ratio: 16/9;
+}
+
+/* ? Ajustes para mobile, por aqui, eu consigo escolher como a tela vai se comportar em tamanhos menores do que 767px, basicamente qualquer celular... poderia ter vários desses @media, um pra cada tamanho de tela diferente que precise, como tablets e telas muito grandes, por exemplo */
+
+/* ! tudo o que for colocado aqui, vai substituir o que já foi colocado em cima, então podemos modificar como a tela aparece, como mudar a ordenação de um flex, por exemplo, assim como eu fiz na classe .sobre, ali em baixo */
+@media (max-width: 767px) {
+  nav ul {
+    justify-content: center;
+  }
+
+  .sobre {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+
+  .textos {
+    width: 100%;
+  }
+
+  .contato {
+    flex-direction: column;
+  }
+
+  .contato form {
+    width: 100%;
+  }
+}
